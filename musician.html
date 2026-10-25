@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>뮤지션 지원서 · 도란도란</title>
+<meta name="description" content="도란도란 무대에 서고 싶은 뮤지션 지원서. 참가비의 70%, 최소 10만 원 보장.">
+<meta property="og:title" content="도란도란 뮤지션 지원서">
+<meta property="og:description" content="낮엔 각자의 일을 하고, 밤엔 노래를 놓지 않은 당신의 무대.">
+<meta property="og:image" content="assets/dorandoran-circle.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="assets/forms.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#2E6A5C"/><g fill="#B4711A"><circle cx="13" cy="3" r="2.2"/><circle cx="23" cy="13" r="2.2"/><circle cx="13" cy="23" r="2.2"/><circle cx="3" cy="13" r="2.2"/><circle cx="20.1" cy="5.9" r="2.2"/><circle cx="20.1" cy="20.1" r="2.2"/><circle cx="5.9" cy="20.1" r="2.2"/><circle cx="5.9" cy="5.9" r="2.2"/></g></svg>도란도란</a>
+    <nav aria-label="바로가기"><a href="./">처음으로</a><a href="musician.html" aria-current="page">뮤지션 지원</a><a href="join.html">관객 신청</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <span class="eyebrow">뮤지션 지원서</span>
+    <h1>노래를 놓지 않은 당신의 무대</h1>
+    <p>낮에는 다른 일을 하고, 노래·기타·피아노를 꾸준히 해 온 분이면 돼요. 커버곡도 자작곡도 좋아요. 지원서를 보고 운영자가 직접 연락드려요.</p>
+    <div class="facts"><span>참가비의 <span data-cfg="sharePct">70</span>%</span><span>최소 <span data-cfg="minGuarantee">10만</span> 원 보장</span><span>평일 저녁 7~9시</span><span>출연 계약서 작성</span></div>
+  </div>
+
+  <form data-table="musician_applications" novalidate>
+    <div class="card">
+      <h2>어떤 분인지 알려 주세요</h2>
+      <div class="field" data-col="stage_name" data-required>
+        <label for="stage_name">활동명 또는 이름<span class="req">*</span></label>
+        <input id="stage_name" type="text" maxlength="60" autocomplete="nickname">
+      </div>
+      <div class="field" data-col="phone" data-kind="phone" data-required>
+        <label for="phone">휴대폰 번호<span class="req">*</span></label>
+        <input id="phone" type="tel" inputmode="tel" maxlength="20" placeholder="010-1234-5678" autocomplete="tel">
+        <small>섭외 연락에만 써요.</small>
+      </div>
+      <div class="field" data-col="email">
+        <label for="email">이메일<span class="opt">선택</span></label>
+        <input id="email" type="email" maxlength="120" autocomplete="email">
+      </div>
+      <div class="field" data-col="day_job">
+        <label for="day_job">낮에는 어떤 일을 하세요?<span class="opt">선택</span></label>
+        <input id="day_job" type="text" maxlength="60" placeholder="예: 간호사, 회사원, 대학원생">
+        <small>모임에서 "낮엔 ○○, 밤엔 뮤지션"으로 소개할 때 써요. 원하지 않으면 비워 두세요.</small>
+      </div>
+      <div class="field" data-col="region">
+        <label for="region">사는 곳</label>
+        <select id="region"><option>대구</option><option>경북</option><option>부산·울산·경남</option><option>그 밖의 지역</option></select>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>어떤 음악을 하세요?</h2>
+      <div class="field" data-col="parts" data-kind="array" data-required data-msg="하나 이상 골라 주세요.">
+        <span class="label">맡는 것<span class="req">*</span></span>
+        <div class="chips">
+          <label><input type="checkbox" value="보컬"><span>보컬</span></label>
+          <label><input type="checkbox" value="통기타"><span>통기타</span></label>
+          <label><input type="checkbox" value="일렉기타"><span>일렉기타</span></label>
+          <label><input type="checkbox" value="피아노·건반"><span>피아노·건반</span></label>
+          <label><input type="checkbox" value="베이스"><span>베이스</span></label>
+          <label><input type="checkbox" value="우쿨렐레"><span>우쿨렐레</span></label>
+          <label><input type="checkbox" value="그 밖의 악기"><span>그 밖의 악기</span></label>
+          <label><input type="checkbox" value="듀오·팀"><span>듀오·팀이에요</span></label>
+        </div>
+      </div>
+      <div class="field" data-col="genre">
+        <label for="genre">주로 하는 장르<span class="opt">선택</span></label>
+        <input id="genre" type="text" maxlength="100" placeholder="예: 발라드, 포크, 재즈, 인디, 자작곡">
+      </div>
+      <div class="field" data-col="links" data-required data-msg="노래를 들어 볼 수 있는 링크를 하나 이상 적어 주세요.">
+        <label for="links">노래를 들어 볼 수 있는 곳<span class="req">*</span></label>
+        <textarea id="links" maxlength="600" placeholder="유튜브·인스타그램·사운드클라우드 주소 등. 여러 개면 줄을 바꿔 적어 주세요."></textarea>
+        <small>링크가 없다면 "링크 없음, 연락 주시면 영상 보낼게요"라고 적어 주세요.</small>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>언제 설 수 있어요?</h2>
+      <div class="field" data-col="days" data-kind="array">
+        <span class="label">저녁 7시에 올 수 있는 요일<span class="opt">여러 개 선택</span></span>
+        <div class="chips">
+          <label><input type="checkbox" value="월"><span>월</span></label>
+          <label><input type="checkbox" value="화"><span>화</span></label>
+          <label><input type="checkbox" value="수"><span>수</span></label>
+          <label><input type="checkbox" value="목"><span>목</span></label>
+          <label><input type="checkbox" value="금"><span>금</span></label>
+          <label><input type="checkbox" value="토"><span>토</span></label>
+          <label><input type="checkbox" value="일"><span>일</span></label>
+        </div>
+      </div>
+      <div class="field" data-col="message">
+        <label for="message">하고 싶은 말<span class="opt">선택</span></label>
+        <textarea id="message" maxlength="1000" placeholder="음악을 놓지 않은 이유, 무대에서 부르고 싶은 곡, 궁금한 점 무엇이든 좋아요."></textarea>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>확인과 동의</h2>
+      <div class="consent" data-col="adult" data-kind="bool" data-required data-msg="만 19세 이상만 지원할 수 있어요.">
+        <label><input type="checkbox" id="adult"><span><span class="tag">필수</span>만 19세 이상이에요.</span></label>
+      </div>
+      <div class="consent" data-col="consent_privacy" data-kind="bool" data-required>
+        <label><input type="checkbox" id="consent_privacy"><span><span class="tag">필수</span>개인정보 수집·이용에 동의해요.</span></label>
+        <details><summary>자세히 보기</summary>
+          <dl>
+            <dt>목적</dt><dd>출연 섭외 연락, 출연자 선정</dd>
+            <dt>항목</dt><dd>활동명(이름), 휴대폰 번호, 사는 곳, 맡는 것, 노래 링크, 가능한 요일 / 선택: 이메일, 낮의 직업, 장르, 하고 싶은 말</dd>
+            <dt>보유 기간</dt><dd>지원일로부터 1년. 그 전에 삭제를 요청하시면 바로 지워요.</dd>
+            <dt>거부할 권리</dt><dd>동의하지 않을 수 있어요. 동의하지 않으면 지원서를 보낼 수 없어요.</dd>
+          </dl>
+          <p style="margin-top:8px">출연이 정해지면 출연 계약서와 출연료 지급(세금 신고)에 필요한 정보는 그때 따로 안내하고 받아요. <a href="privacy.html">개인정보 처리방침</a></p>
+        </details>
+      </div>
+    </div>
+
+    <div class="hp" aria-hidden="true"><label for="company">회사</label><input id="company" type="text" tabindex="-1" autocomplete="off"></div>
+    <div class="submit">
+      <button class="btn solid" type="submit">지원서 보내기</button>
+      <p class="form-error" role="alert"></p>
+    </div>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <span class="big">지원서 잘 받았어요!</span>
+    <p>보내 주신 노래를 듣고 운영자가 직접 연락드릴게요. 궁금한 점은 <b data-mail>hskimstart@gmail.com</b>으로 물어보세요.</p>
+    <a class="btn line" href="./">처음으로</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>도란도란 · 생업이 있는 뮤지션의 작은 무대</span><a href="privacy.html">개인정보 처리방침</a></div></footer>
+<script src="assets/config.js"></script>
+<script src="assets/forms.js"></script>
+</body>
+</html>

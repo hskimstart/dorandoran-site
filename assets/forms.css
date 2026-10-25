@@ -1,0 +1,94 @@
+/* 신청서·처리방침 페이지 공통 모양. 색·글꼴은 홈페이지(index.html)와 같은 값. */
+:root{
+  --paper:#EEF0EC; --card:#FBFBF8; --fg:#1D2420; --muted:#5E6A63; --line:#C9CFC8;
+  --green:#2E6A5C; --green-2:#3E8573; --lamp:#E3A24F; --lamp-deep:#B4711A;
+  --ink:#121C18; --on-ink:#ECEFE9; --on-ink-muted:#93A199; --error:#A33A2B; --chip:#E2E7E1;
+  --display:"Gowun Batang","Noto Serif KR",serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --hand:"Gaegu","Nanum Pen Script",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.7;word-break:keep-all}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lamp-deep);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{max-width:1180px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--display);font-weight:700;font-size:21px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo svg{width:24px;height:24px}
+.nav nav{display:flex;gap:18px;font-size:14px;flex-wrap:wrap;justify-content:flex-end}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a[aria-current="page"]{color:var(--fg);font-weight:600}
+
+.head{padding-block:48px 28px;display:grid;gap:12px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--green)}
+.head h1{font-size:clamp(30px,5vw,44px);line-height:1.25}
+.head p{color:var(--muted);max-width:56ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.facts > span{font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+
+form{display:grid;gap:18px;padding-bottom:80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:20px}
+.card h2{font-size:20px}
+.card > p.note{color:var(--muted);font-size:14px;margin-top:-12px}
+.field{display:grid;gap:8px}
+.field > label,.field > .label{font-weight:600}
+.field .req{color:var(--lamp-deep);font-weight:700;margin-left:4px}
+.field .opt{color:var(--muted);font-weight:400;font-size:13px;margin-left:6px}
+.field small{color:var(--muted);font-size:13px}
+input[type=text],input[type=tel],input[type=email],input[type=url],select,textarea{
+  width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--fg)}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 18%,transparent)}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:var(--error)}
+.field .err{color:var(--error);font-size:13px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:15px;transition:background .15s,border-color .15s,color .15s}
+.chips input:checked + span{background:var(--green);border-color:var(--green);color:var(--card);font-weight:600}
+.chips input:focus-visible + span{outline:2px solid var(--lamp-deep);outline-offset:2px}
+
+.consent{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:8px;background:#fff}
+.consent.bad{border-color:var(--error)}
+.consent label{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;cursor:pointer;font-weight:600}
+.consent input{width:20px;height:20px;margin:3px 0 0;accent-color:var(--green)}
+.consent .tag{font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px;margin-right:6px;background:var(--lamp);color:var(--ink)}
+.consent .tag.opt{background:var(--chip);color:var(--muted)}
+.consent details{font-size:14px;color:var(--muted);padding-left:32px}
+.consent summary{cursor:pointer;color:var(--green);font-weight:600}
+.consent dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;margin:10px 0 0}
+.consent dt{font-weight:600;color:var(--fg)}
+.consent dd{margin:0}
+.refund{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+.refund td{padding:6px 0;border-bottom:1px dashed var(--line)}
+.refund td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit{display:grid;gap:12px;justify-items:start}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:16px;text-decoration:none;padding:14px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer}
+.btn.solid{background:var(--green);color:var(--card)}
+.btn.line{background:transparent;border-color:var(--green);color:var(--green)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.form-error{color:var(--error);font-weight:600}
+
+.done{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 24px;text-align:center;display:grid;gap:14px;justify-items:center;margin-bottom:80px}
+.done .big{font-family:var(--hand);font-size:34px;color:var(--green);line-height:1.2}
+.done p{color:var(--muted);max-width:44ch}
+
+.doc{padding-bottom:80px;display:grid;gap:26px}
+.doc section{display:grid;gap:10px}
+.doc h2{font-size:21px}
+.doc table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card)}
+.doc th,.doc td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.doc th{background:var(--chip)}
+.doc .tbl{overflow-x:auto}
+.doc ul{margin:0;padding-left:20px}
+
+footer{background:var(--ink);color:var(--on-ink-muted);font-size:13px}
+footer .wrap{max-width:1180px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;padding-block:24px}
+footer a{color:var(--on-ink)}

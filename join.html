@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>관객 사전 신청 · 도란도란</title>
+<meta name="description" content="스무 명이 둘러앉아 한 사람의 노래를 듣는 저녁. 도란도란 첫 모임 사전 신청.">
+<meta property="og:title" content="도란도란 관객 사전 신청">
+<meta property="og:description" content="스무 자리, 참가비 1만 원, 사연 신청곡을 라이브로.">
+<meta property="og:image" content="assets/dorandoran-circle.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="assets/forms.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#2E6A5C"/><g fill="#B4711A"><circle cx="13" cy="3" r="2.2"/><circle cx="23" cy="13" r="2.2"/><circle cx="13" cy="23" r="2.2"/><circle cx="3" cy="13" r="2.2"/><circle cx="20.1" cy="5.9" r="2.2"/><circle cx="20.1" cy="20.1" r="2.2"/><circle cx="5.9" cy="20.1" r="2.2"/><circle cx="5.9" cy="5.9" r="2.2"/></g></svg>도란도란</a>
+    <nav aria-label="바로가기"><a href="./">처음으로</a><a href="musician.html">뮤지션 지원</a><a href="join.html" aria-current="page">관객 신청</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <span class="eyebrow">관객 사전 신청</span>
+    <h1>스무 자리 중 한 자리를 맡아 둘게요</h1>
+    <p>지금은 <b data-cfg="meetup">대구 첫 모임</b>의 사전 신청이에요. 날짜·장소·오늘의 뮤지션이 정해지면 문자로 먼저 알려 드리고, 입금 안내를 드려요. <b>입금하시면 자리가 확정돼요.</b> 지금은 돈을 내지 않아요.</p>
+    <div class="facts"><span>참가비 <span data-cfg="price">1만</span> 원 (음료 별도)</span><span><span data-cfg="seats">20</span>자리</span><span><span data-cfg="minPeople">12</span>명 안 되면 열지 않고 전액 환불</span></div>
+  </div>
+
+  <form data-table="audience_signups" data-meetup novalidate>
+    <div class="card">
+      <h2>신청하시는 분</h2>
+      <div class="field" data-col="name" data-required>
+        <label for="name">이름<span class="req">*</span></label>
+        <input id="name" type="text" maxlength="30" autocomplete="name">
+        <small>나중에 입금하실 때 같은 이름으로 입금해 주세요.</small>
+      </div>
+      <div class="field" data-col="phone" data-kind="phone" data-required>
+        <label for="phone">휴대폰 번호<span class="req">*</span></label>
+        <input id="phone" type="tel" inputmode="tel" maxlength="20" placeholder="010-1234-5678" autocomplete="tel">
+        <small>일정·입금·환불 안내 문자를 보내요.</small>
+      </div>
+      <div class="field" data-col="heard_from" data-required data-msg="골라 주세요.">
+        <label for="heard_from">도란도란을 어떻게 알게 되셨어요?<span class="req">*</span></label>
+        <select id="heard_from">
+          <option value="">골라 주세요</option>
+          <option>인스타그램</option><option>에브리타임</option><option>당근</option><option>지인 소개</option><option>뮤지션 채널</option><option>카페에서 봄</option><option>그 밖</option>
+        </select>
+      </div>
+      <div class="field" data-col="knows_host" data-kind="yesno" data-required>
+        <span class="label">운영자나 출연자와 아는 사이인가요?<span class="req">*</span></span>
+        <div class="chips">
+          <label><input type="radio" name="knows" value="yes"><span>네, 아는 사이예요</span></label>
+          <label><input type="radio" name="knows" value="no"><span>아니요</span></label>
+        </div>
+        <small>모임이 정말 필요한 일인지 알아보려고 여쭤봐요. 답에 따라 달라지는 건 없어요.</small>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>사연 신청곡<span class="opt" style="font-family:var(--body);font-size:14px;font-weight:400;margin-left:8px">선택</span></h2>
+      <p class="note">노래 한 곡과 그 노래에 얽힌 이야기를 남겨 주세요. 뮤지션이 골라서 2곡을 라이브로 불러요. 사연은 이름 없이 읽어요.</p>
+      <div class="field" data-col="song">
+        <label for="song">곡 제목과 가수</label>
+        <input id="song" type="text" maxlength="100" placeholder="예: 걱정말아요 그대 - 이적">
+      </div>
+      <div class="field" data-col="story">
+        <label for="story">이 노래에 얽힌 이야기</label>
+        <textarea id="story" maxlength="600" placeholder="언제 들었는지, 누가 생각나는지, 짧아도 좋아요."></textarea>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>확인과 동의</h2>
+      <div class="consent" data-col="adult" data-kind="bool" data-required data-msg="만 19세 이상만 신청할 수 있어요.">
+        <label><input type="checkbox" id="adult"><span><span class="tag">필수</span>만 19세 이상이에요.</span></label>
+      </div>
+      <div class="consent" data-col="refund_ack" data-kind="bool" data-required data-msg="환불 규정을 확인해 주세요.">
+        <label><input type="checkbox" id="refund_ack"><span><span class="tag">필수</span>환불 규정을 확인했어요.</span></label>
+        <details><summary>환불 규정 보기</summary>
+          <p style="margin-top:8px">공정거래위원회 소비자분쟁해결기준(공연업)을 따라요. 입금하신 뒤부터 적용돼요.</p>
+          <table class="refund">
+            <tr><td>모임 10일 전까지</td><td>전액</td></tr>
+            <tr><td>7일 전까지</td><td>90%</td></tr>
+            <tr><td>3일 전까지</td><td>80%</td></tr>
+            <tr><td>1일 전까지</td><td>70%</td></tr>
+            <tr><td>당일 시작 전까지</td><td>10%</td></tr>
+          </table>
+          <ul style="margin:8px 0 0;padding-left:18px">
+            <li>모임 3일 전까지는 입금 후 24시간 안에 취소하면 전액 돌려드려요.</li>
+            <li><span data-cfg="minPeople">12</span>명이 모이지 않아 열지 않으면 모임 10일 전에 알리고 전액 돌려드려요.</li>
+            <li>주최 측 사정으로 취소하면 전액과 참가비의 10%를 더 드려요. 천재지변 등은 전액이에요.</li>
+            <li>출연 뮤지션이 바뀌거나 예정 시간의 절반 이하로 진행되면 전액과 10%를 더 드려요.</li>
+          </ul>
+        </details>
+      </div>
+      <div class="consent" data-col="consent_privacy" data-kind="bool" data-required>
+        <label><input type="checkbox" id="consent_privacy"><span><span class="tag">필수</span>개인정보 수집·이용에 동의해요.</span></label>
+        <details><summary>자세히 보기</summary>
+          <dl>
+            <dt>목적</dt><dd>참가 신청 확인, 일정·입금·환불 안내 연락</dd>
+            <dt>항목</dt><dd>이름, 휴대폰 번호, 알게 된 경로, 아는 사이 여부 / 선택: 사연 신청곡과 사연</dd>
+            <dt>보유 기간</dt><dd>모임이 끝나고 3개월 뒤 지워요. 그 전에 삭제를 요청하시면 바로 지워요.</dd>
+            <dt>거부할 권리</dt><dd>동의하지 않을 수 있어요. 동의하지 않으면 신청할 수 없어요.</dd>
+          </dl>
+          <p style="margin-top:8px"><a href="privacy.html">개인정보 처리방침</a></p>
+        </details>
+      </div>
+      <div class="consent" data-col="consent_photo" data-kind="bool">
+        <label><input type="checkbox" id="consent_photo"><span><span class="tag opt">선택</span>얼굴이 나온 사진·영상을 인스타그램에 올려도 돼요.</span></label>
+        <details><summary>자세히 보기</summary>
+          <dl>
+            <dt>목적</dt><dd>모임 소개·홍보</dd>
+            <dt>항목</dt><dd>모임 중 찍은 사진·영상</dd>
+            <dt>보유 기간</dt><dd>게시 후 삭제를 요청하실 때까지(요청 후 7일 안에 지워요)</dd>
+            <dt>거부할 권리</dt><dd>동의하지 않아도 참가할 수 있어요. 촬영에서 빠지는 자리를 안내해 드려요.</dd>
+          </dl>
+        </details>
+      </div>
+      <div class="consent" data-col="consent_news" data-kind="bool">
+        <label><input type="checkbox" id="consent_news"><span><span class="tag opt">선택</span>다음 모임 소식도 문자로 받을래요.</span></label>
+        <details><summary>자세히 보기</summary>
+          <dl>
+            <dt>목적</dt><dd>다음 모임 안내</dd>
+            <dt>항목</dt><dd>휴대폰 번호</dd>
+            <dt>보유 기간</dt><dd>그만 받겠다고 하실 때까지</dd>
+            <dt>거부할 권리</dt><dd>동의하지 않아도 이번 모임 신청에는 상관없어요.</dd>
+          </dl>
+        </details>
+      </div>
+    </div>
+
+    <div class="hp" aria-hidden="true"><label for="company">회사</label><input id="company" type="text" tabindex="-1" autocomplete="off"></div>
+    <div class="submit">
+      <button class="btn solid" type="submit">사전 신청하기</button>
+      <p class="form-error" role="alert"></p>
+    </div>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <span class="big">자리를 맡아 뒀어요!</span>
+    <p>날짜·장소·오늘의 뮤지션이 정해지면 문자로 먼저 알려 드릴게요. 입금하시면 자리가 확정돼요. 궁금한 점은 <b data-mail>hskimstart@gmail.com</b>으로 물어보세요.</p>
+    <a class="btn line" href="./">처음으로</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>도란도란 · 생업이 있는 뮤지션의 작은 무대</span><a href="privacy.html">개인정보 처리방침</a></div></footer>
+<script src="assets/config.js"></script>
+<script src="assets/forms.js"></script>
+</body>
+</html>
