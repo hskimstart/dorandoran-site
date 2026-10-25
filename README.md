@@ -8,6 +8,10 @@
 | `musician.html` | 뮤지션 지원서 |
 | `join.html` | 관객 사전 신청 |
 | `privacy.html` | 개인정보 처리방침 |
+| `artists.html` | 도란도란 무대에 선 뮤지션 모음 |
+| `artist.html?id=…` | 뮤지션 페이지(공연 영상·그날 부른 곡·직접 후원·섭외 문의) |
+| `qr.html?id=…` | 현장 테이블에 놓는 인쇄용 QR 카드 |
+| `assets/artists.js` | 뮤지션 자료. **새 뮤지션은 여기에 추가**(본인 동의 받은 내용만, 후원 링크는 뮤지션 본인 것만) |
 | `assets/config.js` | 바뀌는 값(참가비, 모임 일정, 연락처, 저장소 주소) — **여기 한 곳에서만 고쳐요** |
 | `assets/forms.css`, `assets/forms.js` | 신청서 공통 모양과 동작 |
 | `.github/workflows/keepalive.yml` | 신청서 저장소가 멈추지 않게 매일 한 번 깨우기 |

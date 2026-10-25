@@ -18,6 +18,14 @@ window.SITE = {
   consentVersion: "2026-10-v1",
   privacyEffective: "2026년 10월 26일",
 
+  // 뮤지션 페이지 후원 버튼 아래 안내(약관·법 확인 결과에 맞춰 고친다)
+  supportNotes: [
+    "후원금은 뮤지션 본인에게 바로 가요. 도란도란은 받지도, 수수료를 떼지도 않아요.",
+    "금액은 자유예요. 후원하지 않아도 괜찮아요.",
+    "보내기 전에 받는 사람 이름이 뮤지션 본인인지 꼭 확인해 주세요.",
+    "후원금 관련 문의·환불은 뮤지션과 직접 해 주세요."
+  ],
+
   supabase: {
     url: "https://qxwvfornbgksydeofagq.supabase.co",
     key: "sb_publishable_nB7iwg4MXqAND_j1uXYBcQ_GmiMZKjt"

@@ -1,0 +1,67 @@
+/* 뮤지션 페이지·뮤지션 모음·QR 카드. 색·글꼴 값은 forms.css의 :root를 그대로 쓴다. */
+.wrap.wide{max-width:1080px}
+.badge-ex{display:inline-block;justify-self:start;font-size:12px;font-weight:700;background:var(--lamp);color:var(--ink);padding:3px 10px;border-radius:999px}
+
+.a-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;padding-block:48px 32px}
+@media (max-width:760px){.a-hero{grid-template-columns:minmax(0,1fr);padding-block:32px 20px}}
+.a-hero .day{font-size:15px;color:var(--green);font-weight:600}
+.a-hero h1{font-size:clamp(36px,7vw,60px);line-height:1.15;margin:6px 0 12px}
+.a-hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.a-hero .tags span{font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.a-hero .intro{color:var(--muted);max-width:52ch}
+.a-hero .quote{font-family:var(--hand);font-size:clamp(22px,3vw,28px);line-height:1.4;color:var(--green);background:var(--card);border-radius:4px;padding:22px 24px;transform:rotate(-1deg);box-shadow:0 1px 0 var(--line),0 16px 30px -20px rgba(0,0,0,.45)}
+.a-hero .quote small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:8px}
+
+.a-sec{padding-block:28px;border-top:1px solid var(--line);display:grid;gap:16px}
+.a-sec h2{font-size:24px}
+.a-sec .sub{color:var(--muted);font-size:15px;margin-top:-8px}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.video{display:grid;gap:8px}
+.video .frame{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;background:var(--ink)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video span{font-size:14px;color:var(--muted)}
+.video-empty{aspect-ratio:16/9;max-width:100%;border-radius:14px;background:var(--ink);color:var(--on-ink-muted);display:grid;place-content:center;text-align:center;gap:6px;padding:20px}
+.video-empty b{color:var(--on-ink);font-family:var(--display);font-size:20px}
+ol.setlist{margin:0;padding-left:22px;display:grid;gap:6px;font-size:17px}
+
+.support{background:var(--ink);color:var(--on-ink);border-radius:20px;padding:28px;display:grid;gap:16px}
+.support h2{color:var(--on-ink)}
+.support .sub{color:var(--on-ink-muted)}
+.support .btns{display:flex;flex-wrap:wrap;gap:10px}
+.support .btn{border-radius:14px;padding:14px 22px}
+.btn.toss{background:#3182F6;color:#fff}
+.btn.kakao{background:#FEE500;color:#191919}
+.btn.off{opacity:.45;pointer-events:none}
+.support ul{margin:0;padding-left:18px;color:var(--on-ink-muted);font-size:14px;display:grid;gap:4px}
+
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.booking{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:12px}
+.booking .mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.booking .addr{font-weight:600;background:var(--chip);border-radius:999px;padding:8px 14px;user-select:all}
+
+/* 뮤지션 모음 */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;padding-bottom:60px}
+.acard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:8px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.acard:hover{transform:translateY(-3px);box-shadow:0 14px 30px -20px rgba(0,0,0,.4)}
+.acard .day{font-size:13px;color:var(--green);font-weight:600}
+.acard b{font-family:var(--display);font-size:26px}
+.acard p{color:var(--muted);font-size:14px}
+.acard .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)}
+.empty-note{background:var(--chip);border-radius:14px;padding:16px 18px;color:var(--fg)}
+
+/* QR 카드 */
+.qr-page{display:grid;justify-items:center;gap:18px;padding-block:32px 60px}
+.qr-card{width:min(100%,380px);background:var(--card);border:2px solid var(--fg);border-radius:20px;padding:26px 24px;display:grid;gap:10px;justify-items:center;text-align:center}
+.qr-card .brand{font-family:var(--display);font-size:20px}
+.qr-card .day{font-size:14px;color:var(--green);font-weight:600}
+.qr-card .nm{font-family:var(--display);font-size:32px;line-height:1.15}
+.qr-card .msg{font-family:var(--hand);font-size:22px;color:var(--green);line-height:1.35}
+.qr-card #qr{padding:10px;background:#fff;border-radius:10px}
+.qr-card #qr img,.qr-card #qr canvas{display:block;width:200px;height:200px}
+.qr-card small{color:var(--muted);font-size:12px;line-height:1.5}
+@media print{
+  .nav,footer,.no-print{display:none!important}
+  body{background:#fff}
+  .qr-page{padding:0}
+  .qr-card{border-width:1px}
+}

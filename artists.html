@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>뮤지션들 · 도란도란</title>
+<meta name="description" content="도란도란 무대에 선 뮤지션들. 낮엔 각자의 일, 밤엔 노래.">
+<meta property="og:title" content="뮤지션들 · 도란도란">
+<meta property="og:description" content="도란도란 무대에 선 뮤지션들. 낮엔 각자의 일, 밤엔 노래.">
+<meta property="og:image" content="assets/dorandoran-circle.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="assets/forms.css">
+<link rel="stylesheet" href="assets/artist.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#2E6A5C"/><g fill="#B4711A"><circle cx="13" cy="3" r="2.2"/><circle cx="23" cy="13" r="2.2"/><circle cx="13" cy="23" r="2.2"/><circle cx="3" cy="13" r="2.2"/><circle cx="20.1" cy="5.9" r="2.2"/><circle cx="20.1" cy="20.1" r="2.2"/><circle cx="5.9" cy="20.1" r="2.2"/><circle cx="5.9" cy="5.9" r="2.2"/></g></svg>도란도란</a>
+    <nav aria-label="바로가기"><a href="./">처음으로</a><a href="artists.html" aria-current="page">뮤지션들</a><a href="musician.html">뮤지션 지원</a><a href="join.html">관객 신청</a></nav>
+  </div>
+</header>
+<main class="wrap wide">
+  <div class="head">
+    <span class="eyebrow">도란도란 무대에 선 사람들</span>
+    <h1>낮엔 각자의 일, 밤엔 노래</h1>
+    <p>도란도란은 출연료가 크지 않아요. 대신 무대에 선 뮤지션마다 이 페이지를 남겨요. 공연 영상, 그날 부른 곡, 직접 후원, 섭외 문의까지. 여기서 더 큰 무대로 가는 사람이 나오길 바라요.</p>
+    <p class="empty-note" id="emptyNote" hidden>첫 무대는 2026년 12월이에요. 무대에 선 뮤지션이 여기에 한 명씩 쌓여요. 아래는 예시예요.</p>
+  </div>
+  <div class="cards" id="artists"></div>
+</main>
+<footer><div class="wrap"><span>도란도란 · 생업이 있는 뮤지션의 작은 무대</span><a href="privacy.html">개인정보 처리방침</a></div></footer>
+<script src="assets/config.js"></script>
+<script src="assets/artists.js"></script>
+<script src="assets/artist.js"></script>
+</body>
+</html>

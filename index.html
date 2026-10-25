@@ -145,6 +145,22 @@ a{color:inherit}
 .slip-float .t{color:var(--green);display:block}
 .note-ex{text-align:center;font-size:12.5px;color:var(--muted);margin-top:18px}
 
+/* 발판 */
+#stepping{padding-block:96px;background:var(--ink);color:var(--on-ink)}
+#stepping .st-head{display:grid;gap:14px;max-width:640px;margin-bottom:40px}
+#stepping .eyebrow{color:var(--lamp)}
+#stepping h2{font-size:clamp(30px,4.6vw,50px);line-height:1.2}
+#stepping .st-head p{color:var(--on-ink-muted);font-size:17px}
+#stepping .st-head b{color:var(--lamp)}
+.st-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:st}
+@media (max-width:820px){.st-steps{grid-template-columns:minmax(0,1fr)}}
+.st-steps li{counter-increment:st;border:1px solid color-mix(in srgb,var(--on-ink) 16%,transparent);border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start}
+.st-steps li::before{content:counter(st);font-family:var(--display);font-size:15px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--lamp);color:var(--ink)}
+.st-steps b{font-family:var(--display);font-size:26px}
+.st-steps span{color:var(--on-ink-muted)}
+.st-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+#stepping .btn.line{border-color:var(--lamp);color:var(--lamp)}
+
 /* 가로 스크롤 */
 #musician{position:relative;background:var(--paper);overflow:hidden}
 .h-pin{height:100svh;min-height:600px;display:flex;align-items:center}
@@ -223,7 +239,7 @@ footer{background:var(--ink);color:var(--on-ink);padding-top:80px;overflow:hidde
     </a>
     <nav aria-label="바로가기">
       <a class="opt" href="#steps">모임 소개</a>
-      <a class="opt" href="#musician">뮤지션</a>
+      <a class="opt" href="artists.html">뮤지션들</a>
       <a class="opt" href="#cafe">카페</a>
       <a class="opt" href="join.html">관객 신청</a>
       <a class="btn solid" href="musician.html">뮤지션 지원</a>
@@ -340,6 +356,25 @@ footer{background:var(--ink);color:var(--on-ink);padding-top:80px;overflow:hidde
       <p class="note-ex">모두 예시로 쓴 쪽지예요. 실제 모임에서는 신청하실 때 받은 사연을 이름 없이 읽어 드려요.</p>
     </div>
     <div class="slip-float" id="slipFloat" aria-hidden="true"><span class="k">사연 신청곡</span><span class="t" id="slipSong"></span><span id="slipStory"></span></div>
+  </section>
+
+  <section id="stepping" aria-label="도란도란이 하려는 일">
+    <div class="wrap">
+      <div class="st-head">
+        <span class="eyebrow">도란도란이 하려는 일</span>
+        <h2>출연료는 작아도,<br>다음 무대는 크게</h2>
+        <p>솔직히 한 번의 모임으로 큰돈을 벌기는 어려워요. 그래서 도란도란은 노래한 사람이 더 큰 세계로 나가는 <b>발판</b>이 되려고 해요.</p>
+      </div>
+      <ol class="st-steps">
+        <li><b>무대</b><span>노래만 들으러 온 스무 명 앞에서 불러요. 박수보다 오래 남는 건 끝까지 귀 기울이던 얼굴들이에요.</span></li>
+        <li><b>기록</b><span>그날의 공연을 영상으로 남겨 뮤지션 페이지에 올려요. 같은 영상을 뮤지션 채널에도 자유롭게 올릴 수 있어요.</span></li>
+        <li><b>연결</b><span>마음이 움직인 관객은 뮤지션에게 바로 후원하고, 축가·행사·더 큰 무대 섭외 문의는 뮤지션에게 이어 드려요.</span></li>
+      </ol>
+      <div class="st-cta">
+        <a class="btn solid" href="artists.html">무대에 선 뮤지션들</a>
+        <a class="btn line" href="artist.html?id=example">뮤지션 페이지 예시 보기</a>
+      </div>
+    </div>
   </section>
 
   <section id="musician" aria-label="뮤지션에게 드리는 약속">

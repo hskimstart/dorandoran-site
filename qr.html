@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>테이블 QR 카드 · 도란도란</title>
+<meta name="description" content="도란도란 현장 테이블에 놓는 뮤지션 후원 QR 카드.">
+<meta property="og:title" content="테이블 QR 카드 · 도란도란">
+<meta property="og:description" content="도란도란 현장 테이블에 놓는 뮤지션 후원 QR 카드.">
+<meta property="og:image" content="assets/dorandoran-circle.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Gaegu:wght@700&display=swap">
+<link rel="stylesheet" href="assets/forms.css">
+<link rel="stylesheet" href="assets/artist.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="5" fill="#2E6A5C"/><g fill="#B4711A"><circle cx="13" cy="3" r="2.2"/><circle cx="23" cy="13" r="2.2"/><circle cx="13" cy="23" r="2.2"/><circle cx="3" cy="13" r="2.2"/><circle cx="20.1" cy="5.9" r="2.2"/><circle cx="20.1" cy="20.1" r="2.2"/><circle cx="5.9" cy="20.1" r="2.2"/><circle cx="5.9" cy="5.9" r="2.2"/></g></svg>도란도란</a>
+    <nav aria-label="바로가기"><a href="./">처음으로</a><a href="artists.html">뮤지션들</a><a href="musician.html">뮤지션 지원</a><a href="join.html">관객 신청</a></nav>
+  </div>
+</header>
+<main class="wrap qr-page">
+  <p class="no-print" style="color:var(--muted);text-align:center;max-width:44ch">테이블에 놓을 카드예요. 주소 끝의 <b>?id=</b>에 뮤지션 id를 넣고 인쇄하세요. 현장에서는 QR 위에 다른 스티커가 붙어 있지 않은지 모임 전에 꼭 확인하세요.</p>
+  <div class="qr-card" id="qrCard">
+    <span class="brand">도란도란</span>
+    <span class="day" id="qrDay"></span>
+    <span class="nm" id="qrName"></span>
+    <span class="msg">노래가 마음에 남았다면,<br>QR을 찍어 직접 후원해 주세요</span>
+    <div id="qr" aria-label="뮤지션 페이지 QR 코드"></div>
+    <small>공연 영상·그날 부른 곡·섭외 문의도 이 페이지에 있어요.<br>후원금은 뮤지션에게 바로 가요. 도란도란은 받지 않아요.<br><span id="qrUrl"></span></small>
+  </div>
+  <button class="btn solid no-print" id="print" type="button">인쇄하기</button>
+</main>
+<footer><div class="wrap"><span>도란도란 · 생업이 있는 뮤지션의 작은 무대</span><a href="privacy.html">개인정보 처리방침</a></div></footer>
+<script src="assets/config.js"></script>
+<script src="assets/artists.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="assets/artist.js"></script>
+</body>
+</html>
