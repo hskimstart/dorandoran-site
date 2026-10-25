@@ -69,20 +69,30 @@
       ]));
     }
 
-    // 직접 후원
-    const toss = safeUrl(a.support?.toss, ["https://toss.me/"]);
-    const kakao = safeUrl(a.support?.kakao, ["https://qr.kakaopay.com/"]);
-    const sup = el("section", { class: "a-sec" }, el("div", { class: "support", id: "support" }, [
+    // 직접 후원(뮤지션 본인에게 바로)
+    const sp = a.support || {};
+    const kakao = safeUrl(sp.kakao, ["https://qr.kakaopay.com/"]);
+    const tossQr = typeof sp.tossQr === "string" && /^assets\/[\w\/.-]+\.(png|jpe?g|webp)$/i.test(sp.tossQr) ? sp.tossQr : "";
+    const acct = sp.account && sp.account.number ? sp.account : null;
+    const ways = [];
+    if (kakao) ways.push(el("a", { class: "btn kakao", href: kakao, target: "_blank", rel: "noopener", text: "카카오페이로 후원하기" }));
+    if (acct) {
+      const line = `${acct.bank || ""} ${acct.number} ${acct.holder ? "(" + acct.holder + ")" : ""}`.trim();
+      const copy = el("button", { class: "btn line-ink", type: "button", text: "계좌번호 복사" });
+      copy.addEventListener("click", () => navigator.clipboard.writeText(acct.number).then(() => { copy.textContent = "복사했어요"; }, () => {}));
+      ways.push(el("div", { class: "acct" }, [el("span", { text: line }), copy]));
+    }
+    const hasWay = ways.length || tossQr;
+    root.append(el("section", { class: "a-sec" }, el("div", { class: "support", id: "support" }, [
       el("h2", { text: `${a.name}님에게 직접 후원하기` }),
       el("p", { class: "sub", text: "노래가 마음에 남았다면, 그 마음을 뮤지션에게 바로 전해 주세요." }),
-      el("div", { class: "btns" }, [
-        el("a", { class: "btn toss" + (toss ? "" : " off"), href: toss || "#support", target: "_blank", rel: "noopener", text: "토스로 후원하기" }),
-        el("a", { class: "btn kakao" + (kakao ? "" : " off"), href: kakao || "#support", target: "_blank", rel: "noopener", text: "카카오페이로 후원하기" })
-      ]),
-      el("ul", {}, (S.supportNotes || []).map(t => el("li", { text: t }))),
-      !toss && !kakao ? el("p", { class: "sub", text: a.example ? "예시 페이지라 후원 버튼이 작동하지 않아요." : "후원 링크를 준비하고 있어요." }) : null
-    ]));
-    root.append(sup);
+      ways.length ? el("div", { class: "btns" }, ways) : null,
+      tossQr ? el("figure", { class: "tossqr" }, [el("img", { src: tossQr, alt: `${a.name}님 토스 송금 QR`, width: "180", height: "180" }), el("figcaption", { text: "토스 앱 → 전체 → 사진으로 송금에서 이 QR을 찍어 주세요." })]) : null,
+      sp.payeeName ? el("p", { class: "payee" }, [el("span", { text: "송금 화면의 받는 사람: " }), el("b", { text: sp.payeeName })]) : null,
+      !hasWay ? el("p", { class: "sub", text: a.example ? "예시 페이지라 후원 방법이 비어 있어요. 실제 뮤지션 페이지에는 카카오페이 버튼이나 토스 QR이 들어가요." : "후원 방법을 준비하고 있어요." }) : null,
+      el("ul", {}, (S.supportNotes || []).map(x => el("li", { text: x }))),
+      sp.checked ? el("p", { class: "checked", text: `${a.name}님 동의를 받아 올렸고, ${sp.checked}에 받는 사람을 확인했어요.` }) : null
+    ])));
 
     // 채널
     const L = a.links || {};

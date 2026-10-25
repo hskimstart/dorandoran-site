@@ -29,9 +29,15 @@ ol.setlist{margin:0;padding-left:22px;display:grid;gap:6px;font-size:17px}
 .support .sub{color:var(--on-ink-muted)}
 .support .btns{display:flex;flex-wrap:wrap;gap:10px}
 .support .btn{border-radius:14px;padding:14px 22px}
-.btn.toss{background:#3182F6;color:#fff}
 .btn.kakao{background:#FEE500;color:#191919}
-.btn.off{opacity:.45;pointer-events:none}
+.btn.line-ink{background:transparent;border-color:color-mix(in srgb,var(--on-ink) 40%,transparent);color:var(--on-ink);padding:10px 16px;font-size:14px}
+.acct{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:color-mix(in srgb,var(--on-ink) 8%,transparent);border-radius:14px;padding:10px 14px;font-weight:600;font-variant-numeric:tabular-nums}
+.tossqr{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.tossqr img{width:180px;height:180px;max-width:100%;background:#fff;border-radius:12px;padding:8px}
+.tossqr figcaption{color:var(--on-ink-muted);font-size:14px;max-width:28ch}
+.payee{font-size:16px}
+.payee b{color:var(--lamp)}
+.support .checked{font-size:12px;color:var(--on-ink-muted)}
 .support ul{margin:0;padding-left:18px;color:var(--on-ink-muted);font-size:14px;display:grid;gap:4px}
 
 .links{display:flex;flex-wrap:wrap;gap:10px}
